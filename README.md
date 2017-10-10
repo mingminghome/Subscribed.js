@@ -22,7 +22,6 @@ If you have a lot of campaign running on the same time , you can divide differen
 Call plugin css on the **&lt;HEAD&gt;** of the website
 ```
 <link rel="stylesheet" type="text/css" href="jquery.subscribed.min.css">
-
 ```
 Call plugin on the end of **&lt;body&gt;**
 ```
