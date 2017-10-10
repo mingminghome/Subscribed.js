@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Demo of SubscribedJS</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		
+		<!-- Load Fontawesome CSS -->
+		<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
+		<!-- Load Plugin CSS -->
+		<link rel="stylesheet" type="text/css" href="../jquery.subscribed.min.css">
+	</head>
+	
+	<body>
+	
+	<!-- Button for trigger -->
+	<a href="#" class="sale_remind">Click Here</a>
+
+	<!-- Load Jquery CDN -->
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+
+	<!-- Load plugin -->
+	<script type="text/javascript" src="../jquery.subscribed.min.js" ></script>
+	<script type="text/javascript">
+	$(document).ready(function(){
+		$('.sale_remind').SubscribedJS({
+			event:'ABC123ab',											//Event ID - Please create a event on your database with 8 CHAR long ID
+			url:'../backend/subscribe.php', 							//Your backend URL - Change it before use !
+			title:'SubscribedJS!',										//Title on the subscription lightbox
+			desc:'Create your own subscription service! Try now !',		//Description on the subscription lightbox
+			width : '80%',												//Lightbox width in %
+			top: '20%',													//Lightbox top padding in %
+			left: '10%',												//Lightbox left padding in %
+			placeholder:'&#xf003; E-mail',								//Input box place holder
+			btnText:'Submit',											//Submit Button text
+			tc:'* I agree to make this plugin better ...',				//T&C text
+			gaEvent:'Subscribe Event',									//GA Event name (Optional if you have GA on the page)
+			err:{	'01':'&#xf059; May I know your E-mail address?',	//Error message
+					'02':'&#xf06a; Please enter a vaild E-mail address!',
+					'03':'&#xf119; We found something unusual on our server! Please try again later!',
+					'04':'&#xf119; We found something unusual on network! Please try again later!',
+					'05':'&#xf119; You have already applied!'
+				},
+			succ:{
+				'title':'Wooo!',										//Success message
+				"desc":"Thanks for your application!"
+			}
+		});
+	});
+    </script>	
+	
+	
+	</body>
+</html>
